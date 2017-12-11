@@ -1,0 +1,131 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.yarnandtail</groupId>
+	<artifactId>andhow-samples</artifactId>
+	<version>0.4.0-SNAPSHOT</version>
+	
+	<!-- This really isn't meant to be packaged up at all - its sample code -->
+	<packaging>pom</packaging>
+	<name>AndHow Sample Usages</name>
+	<description>A collection of usage examples, nested into separate projects.</description>
+
+
+	<url>https://github.com/eeverman/andhow</url>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+			<comments>
+				Copyright 2016 Eric Everman
+
+				Licensed under the Apache License, Version 2.0 (the "License");
+				you may not use this file except in compliance with the License.
+				You may obtain a copy of the License at
+
+				http://www.apache.org/licenses/LICENSE-2.0
+
+				Unless required by applicable law or agreed to in writing, software
+				distributed under the License is distributed on an "AS IS" BASIS,
+				WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+				See the License for the specific language governing permissions and
+				limitations under the License.
+			</comments>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Eric Everman</name>
+			<email>eeverman+github@yarnandtail.org</email>
+			<id>eeverman</id>
+			<timezone>-6</timezone>
+			<url>https://github.com/eeverman</url>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:git@github.com:eeverman/andhow-samples.git</connection>
+		<developerConnection>scm:git:git@github.com:eeverman/andhow-samples.git</developerConnection>
+		<url>https://github.com/eeverman/andhow-samples/tree/master</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<andhow.version>0.4.0-RC6-SNAPSHOT</andhow.version>
+		<maven-javadoc-plugin-version>2.10.4</maven-javadoc-plugin-version>
+		<maven-source-plugin-version>2.4</maven-source-plugin-version>
+	</properties>
+
+	<modules>
+		<module>complex-example</module>
+		<module>simple-example</module>
+		<module>simple-custom-config</module>
+	</modules>
+	
+
+	<repositories>
+		<repository>
+			<id>repo1-maven</id>
+			<name>Repo1 Maven</name>
+			<url>http://repo1.maven.org/maven/</url>
+		</repository>
+	</repositories>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.12</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.6.2</version>
+				</plugin>
+				<plugin>
+					<inherited>true</inherited>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>2.8.2</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>${maven-javadoc-plugin-version}</version>
+					<executions>
+						<execution>
+							<id>attach-javadocs</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<additionalparam>-Xdoclint:none</additionalparam>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.9</source>
+					<target>1.9</target>
+					<compilerVersion>1.9</compilerVersion> 
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

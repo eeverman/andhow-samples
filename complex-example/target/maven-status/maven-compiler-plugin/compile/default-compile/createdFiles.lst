@@ -1,0 +1,11 @@
+net/spacebase/SpaceBaseInit.class
+net/spacebase/PlanetService.class
+META-INF/services/org.yarnandtail.andhow.service.PropertyRegistrar
+net/spacebase/ReallyOldSatelliteService.class
+net/spacebase/$PlanetService_AndHowProps.class
+net/spacebase/$SpaceBaseApplication_AndHowProps.class
+net/spacebase/SatelliteServiceConfig.class
+net/spacebase/SpaceBaseApplication$AppInfo.class
+META-INF/services/org.yarnandtail.andhow.AndHowInit
+net/spacebase/$SatelliteServiceConfig_AndHowProps.class
+net/spacebase/SpaceBaseApplication.class

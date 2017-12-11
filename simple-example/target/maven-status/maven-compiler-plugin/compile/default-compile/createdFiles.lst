@@ -1,0 +1,5 @@
+org/simple/GettingStarted2.class
+org/simple/$GettingStarted2_AndHowProps.class
+org/simple/$GettingStarted_AndHowProps.class
+org/simple/GettingStarted.class
+META-INF/services/org.yarnandtail.andhow.service.PropertyRegistrar
