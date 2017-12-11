@@ -54,7 +54,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<andhow.version>0.4.0-RC6-SNAPSHOT</andhow.version>
+		<andhow.version>0.4.0-RC6</andhow.version>
 		<maven-javadoc-plugin-version>2.10.4</maven-javadoc-plugin-version>
 		<maven-source-plugin-version>2.4</maven-source-plugin-version>
 	</properties>
