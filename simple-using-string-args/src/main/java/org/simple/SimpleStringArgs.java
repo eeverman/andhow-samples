@@ -1,10 +1,10 @@
 package org.simple;
 
-import org.yarnandtail.andhow.AndHow;
+import org.yarnandtail.andhow.*;
 import org.yarnandtail.andhow.property.*;
 
-//Same as GettingStarted, but handles main() arguments
-public class GettingStarted2 {
+@GroupInfo(name="Launch Config", desc="More details...")
+public class SimpleStringArgs {
 	
 	final static IntProp COUNT_DOWN_START = IntProp.builder().mustBeNonNull()
 			.desc("Start the countdown from this number")
@@ -13,6 +13,9 @@ public class GettingStarted2 {
 	private final static StrProp LAUNCH_CMD = StrProp.builder().mustBeNonNull()
 			.desc("What to say when its time to launch")
 			.mustMatchRegex(".*Go.*").defaultValue("GoGoGo!").build();
+	
+	private final static BolProp NOTIFY_NEWS = BolProp.builder().defaultValue(true)
+			.desc("If true, post launch events to the AP news feed").build();
 	
 	public String launch() {
 		String launch = "";
@@ -26,9 +29,14 @@ public class GettingStarted2 {
 	
 	public static void main(String[] args) {
 		
-		AndHow.findConfig().setCmdLineArgs(args).build();
+		AndHow.findConfig()
+				.setCmdLineArgs(args)
+				.addFixedValue(NOTIFY_NEWS, false)	//turn off for cmd line use
+				.build();
 		
-		GettingStarted2 gs = new GettingStarted2();
+		SimpleStringArgs gs = new SimpleStringArgs();
 		System.out.println(gs.launch());
 	}
+	
+	public boolean isNewsNotified() { return NOTIFY_NEWS.getValue(); }
 }

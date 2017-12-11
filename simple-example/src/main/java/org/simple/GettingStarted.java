@@ -1,6 +1,5 @@
 package org.simple;
 
-import org.yarnandtail.andhow.AndHow;
 import org.yarnandtail.andhow.property.*;
 
 public class GettingStarted {

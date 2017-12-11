@@ -8,7 +8,7 @@ Java9 places 'Generated' in a module that needs to be separate included in a bui
 or brought in as a dependency.  As a result, just using a comment instead.
 @javax.annotation.Generated(
 	value="org.yarnandtail.andhow.compile.AndHowCompileProcessor",
-	date="2017-12-10T21:37:54.064-0600",
+	date="2017-12-11T10:02:44.876-0600",
 	comments="Proxy for net.spacebase.SpaceBaseApplication registered as a service provider in META-INF/services/org.yarnandtail.andhow.service.PropertyRegistrar") */
 public class $SpaceBaseApplication_AndHowProps extends AbstractPropertyRegistrar {
 
