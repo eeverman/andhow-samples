@@ -19,11 +19,11 @@ public class SpaceBaseTestInit implements AndHowTestInit {
 		return StdConfig.instance()
 				/* Just like SpaceBaseInit, but a slightly different url
 				so we can see the change */
-				.addFixedValue(PlanetService.LOG_SERVER, "http://test.logserver.com/ps/")
+				.addFixedValue(PublicPlanet.CONFIG.BROADCAST.URL, "http://test.logserver.com/ps/")
 		
 				/* More typical for testing:  turn off event broadcast and the cache */
-				.addFixedValue(PlanetService.BROADCAST_LOG_EVENTS, false)
-				.addFixedValue(PlanetService.ENABLE_CACHE, false);
+				.addFixedValue(PublicPlanet.CONFIG.BROADCAST.ENABLED, false)
+				.addFixedValue(PublicPlanet.CONFIG.CACHE.ENABLED, false);
 	}
 
 }

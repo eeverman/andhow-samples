@@ -49,16 +49,15 @@ public class SpaceBaseApplicationTest extends AndHowTestBase {
 		assertEquals("http://satservice.com/query/", ross.getQueryUrl());	//from andhow.properties file
 		assertEquals(99, ross.getTimeout());	//from andhow.properties file
 		
-		//Try out the PlanetService, WHICH ONLY READS SYSTEM PROPERTIES
-		PlanetService ps = new PlanetService();
-		assertEquals("http://planetserice.org/this_one/", ps.getItemUrl());		//from andhow.properties file
-		assertEquals("http://planetserice.org/what/", ps.getQueryUrl());	//from andhow.properties file
-		assertEquals(50, ps.getTimeout());	//from andhow.properties file
+		//Try out the PublicPlanet, WHICH ONLY READS SYSTEM PROPERTIES
+		PublicPlanet ps = new PublicPlanet();
+		assertEquals("http://planetserice.org/", ps.getRemoteUrl());		//from andhow.properties file
+		assertEquals(50, ps.getRemoteTimeout());	//from andhow.properties file
 		
 		//These three values are hard-coded in SpaceBaseTestInit as an example of
 		//how common settings for tests might be specified
-		assertEquals("http://test.logserver.com/ps/", ps.getLogServer());
-		assertEquals(false, ps.isBroadcastLogEvents());
+		assertEquals("http://test.logserver.com/ps/", ps.getBroadcastUrl());
+		assertEquals(false, ps.isBroadcastEvents());
 		assertEquals(false, ps.isCacheEnabled());
 	}
 
@@ -81,11 +80,11 @@ public class SpaceBaseApplicationTest extends AndHowTestBase {
 		//Try out the SpaceBaseApplication
 		assertEquals("Test Space Base", sba.getAppName());	//This value found in the test_andhow.properties file
 
-		PlanetService ps = new PlanetService();
+		PublicPlanet ps = new PublicPlanet();
 		
 		//These values also specified in test_andhow.properties
-		assertEquals("http://server.from.test.properties/ps/", ps.getLogServer());
-		assertEquals(false, ps.isBroadcastLogEvents());
+		assertEquals("http://server.from.test.properties/ps/", ps.getBroadcastUrl());
+		assertEquals(false, ps.isBroadcastEvents());
 		assertEquals(false, ps.isCacheEnabled());
 		
 

@@ -20,7 +20,8 @@ public class SpaceBaseInit implements AndHowInit {
 				/* force a specific logging server via a fixed value in the 
 				configuration - this would not be a best practice, but is an example
 				of how values can be forced in configuration. */
-				.addFixedValue(PlanetService.LOG_SERVER, "http://prod.logserver.com/ps/");
+				.addFixedValue(PublicPlanet.CONFIG.BROADCAST.ENABLED, true)
+				.addFixedValue(PublicPlanet.CONFIG.BROADCAST.URL, "http://prod.logserver.com/ps/");
 	}
 
 }
