@@ -3,7 +3,7 @@
 
 	<groupId>org.yarnandtail</groupId>
 	<artifactId>andhow-samples</artifactId>
-	<version>0.4.0-SNAPSHOT</version>
+	<version>0.4.0</version>
 	
 	<!-- This really isn't meant to be packaged up at all - its sample code -->
 	<packaging>pom</packaging>
@@ -54,7 +54,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<andhow.version>0.4.0-RC6</andhow.version>
+		<andhow.version>0.4.0</andhow.version>
 		<maven-javadoc-plugin-version>2.10.4</maven-javadoc-plugin-version>
 		<maven-source-plugin-version>2.4</maven-source-plugin-version>
 	</properties>
@@ -64,6 +64,7 @@
 		<module>simple-example</module>
 		<module>simple-using-string-args</module>
 		<module>simple-custom-config</module>
+		<module>sample-webapp</module>
 	</modules>
 	
 
