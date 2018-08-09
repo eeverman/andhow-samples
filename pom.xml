@@ -65,6 +65,7 @@
 		<module>simple-using-string-args</module>
 		<module>simple-custom-config</module>
 		<module>sample-webapp</module>
+	 <module>examples-from-docs</module>
 	</modules>
 	
 
