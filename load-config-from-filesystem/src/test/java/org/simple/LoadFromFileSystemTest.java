@@ -18,13 +18,13 @@ import static org.junit.Assert.*;
  *
  * @author ericeverman
  */
-public class CustomInitTest extends AndHowTestBase {
+public class LoadFromFileSystemTest extends AndHowTestBase {
 
 	public static final String CLASSPATH_OF_PROPS = "/copy_me_to_filesystem.properties";
 
 	File tempPropFile;
 
-	public CustomInitTest() {
+	public LoadFromFileSystemTest() {
 	}
 
 	@Before
@@ -43,24 +43,28 @@ public class CustomInitTest extends AndHowTestBase {
 	}
 
 	@Test
-	public void testConfigWithoutSpecifyingAFileSystemPathSoUsingSimplePropFile()
+	public void testConfigViaSysPropsWithoutSpecifyingAFileSystemPath()
 			throws IOException {
 
-		//We could explicitly initiate AndHow, but implicity init will do the same thing
-		//AndHow.findConfig().build();
+		//The file on the filesystem is not being used at all
+		System.setProperty("org.simple.SimpleStringArgs.LAUNCH_CMD", "Go-LoadedFromSystemProperties!");
+		System.setProperty("org.simple.SimpleStringArgs.COUNT_DOWN_START", "3");
+
 		SimpleStringArgs ssa = new SimpleStringArgs();
 
 		//These values found in /my.properties file
 		//By default AndHow reads from /andhow.properties, but CustomInit changed the name
 		assertEquals(Integer.valueOf(3), SimpleStringArgs.COUNT_DOWN_START.getValue());
-		assertEquals("3...2...1...GoClasspath!", ssa.launch());
+		assertEquals("3...2...1...Go-LoadedFromSystemProperties!", ssa.launch());
 	}
 
 	@Test
 	public void testConfigFromFilesystem() throws IOException {
-		AndHow.findConfig()
-				.addFixedValue(CustomInit.PROP_FILE_ON_FILESYSTEM, tempPropFile.getCanonicalPath())
-				.build();
+		
+		//Use a system property to specify which file to load config from.
+		//It would also work to specify this property via a main method, env. Var,
+		//or JNDI.
+		System.setProperty("org.simple.LoadFromFileSystem.MY_APP_PROP_FILE_PATH", tempPropFile.getCanonicalPath());
 
 		SimpleStringArgs ssa = new SimpleStringArgs();
 
