@@ -63,9 +63,8 @@
 		<module>complex-example</module>
 		<module>simple-example</module>
 		<module>simple-using-string-args</module>
-		<module>simple-custom-config</module>
 		<module>sample-webapp</module>
-	 <module>examples-from-docs</module>
+	 <module>load-config-from-filesystem</module>
 	</modules>
 	
 
