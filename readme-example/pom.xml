@@ -6,12 +6,15 @@
 		<version>0.4.0</version>
 	</parent>
 
-	<artifactId>simple-example</artifactId>
+	<artifactId>readme-example</artifactId>
 	
 	<!-- This really isn't meant to be packaged up at all - its sample code -->
 	<packaging>jar</packaging>
-	<name>simple-example</name>
-	<description>A usage examples of the AndHow! configuration frameork.</description>
+	<name>readme-example</name>
+	<description>
+		The usage example on the main page of the AndHow Project:
+		https://github.com/eeverman/andhow
+	</description>
 
 	<dependencies>
 		<dependency>
