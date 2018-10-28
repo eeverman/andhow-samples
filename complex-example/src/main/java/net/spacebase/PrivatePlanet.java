@@ -1,23 +1,22 @@
 package net.spacebase;
 
-import org.yarnandtail.andhow.GroupInfo;
 import org.yarnandtail.andhow.property.*;
 
 /**
- *
+ * Simplest Property usage example in this application.
+ * 
  * @author ericeverman
  */
 public class PrivatePlanet {
 
-	private static interface CONFIG {
-		@GroupInfo(name = "Your group config", desc = "description. . .")
-		static interface YOUR_GROUP_HERE {
-			StrProp IM_PRIVATE = StrProp.builder().defaultValue("TOP_SECRET").build();
-		}
-	}
+	//Properties can be declared anywhere you can declare a static variables.
+	//The MUST be static final.
+	//As best practice, group Properties into interfaces as the other classes do.
+	static final StrProp IM_PRIVATE = StrProp.builder().defaultValue("TOP_SECRET").build();
+
 
 	public String getSecret() {
-		return CONFIG.YOUR_GROUP_HERE.IM_PRIVATE.getValue();
+		return IM_PRIVATE.getValue();
 	}
 
 }

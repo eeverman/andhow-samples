@@ -51,14 +51,4 @@ public class PublicPlanet {
 		return CONFIG.BROADCAST.ENABLED.getValue();
 	}
 
-	/**
-	 * In real life, there would be methods that actually use the
-	 * configuration...
-	 *
-	 * @param planetName
-	 * @return
-	 */
-	public String fetchData(String planetName) {
-		return "I found a bunch of data for " + planetName + " ";
-	}
 }

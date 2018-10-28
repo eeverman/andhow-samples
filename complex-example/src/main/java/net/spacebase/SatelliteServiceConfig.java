@@ -8,14 +8,17 @@ import org.yarnandtail.andhow.property.IntProp;
 import org.yarnandtail.andhow.property.StrProp;
 
 /**
- * A standalone interface used to contain a related set of configuration
- * properties for a legacy service that doesn't use AndHow and only reads configuration
- * from system properties.
+ * A standalone interface used to wrap the configuration for the legacy
+ * ReallyOldSatelliteService (that you cannot modify).
+ * 
+ * Notice that we can provide full documentation for all the parameters and
+ * make sure they end up assigned to the right sys props that ReallyOldSatelliteService
+ * is expecting.
  * 
  * @author ericeverman
  */
 @GroupExport(exporter = SysPropExporter.class,
-		exportByCanonicalName = Exporter.EXPORT_CANONICAL_NAME.NEVER,
+		exportByCanonicalName = Exporter.EXPORT_CANONICAL_NAME.NEVER, 
 		exportByOutAliases = Exporter.EXPORT_OUT_ALIASES.ALWAYS)
 @GroupInfo(name = "Satellite Service Configuration for a legacy service",
 		desc = "ReallyOldSatelliteSerive is a legacy/3rd party service that doesn't " +
@@ -25,19 +28,17 @@ import org.yarnandtail.andhow.property.StrProp;
 public interface SatelliteServiceConfig {
 
 	/*
-	Each Property below includes an 'aliasInAndOut', which does two things:  It
-	adds an alternate name that will be recognized when loading the property, and
-	it adds the ability to export the property under that aliased name.
-	The @GroupExport annotation above specifies that the values of all properties
-	should be exported as system properties using their 'out' alias names.
+	Each Property includes an 'aliasInAndOut', which does two things:  Adds an
+	alternate name recognized when loading the property, and adds a name to
+	export the property to.  Here the alias names match the sys props expected
+	in the ReallyOldSatelliteSerivce.
 	
-	This enables use to use the strong typing, early validation and rich documentation
+	The @GroupExport annotation on this interface tells AndHow to export all
+	Properties defined here as system properties using their 'out' alias names.
+	
+	This lets us use the strong typing, early validation and rich documentation
 	of AndHow, but still pass values thru to legacy systems that only use System
 	properties for configuration.
-	
-	To be more selective, its possible to just specify aliasIn() - specify an
-	alternate name that will be recognized for loading values - or just specify
-	aliasOut() - just an export name.
 	 */
 	StrProp SERVICE_URL = StrProp.builder().mustEndWith("/").mustBeNonNull().aliasInAndOut("sat.svs").build();
 	IntProp TIMEOUT = IntProp.builder().defaultValue(20).mustBeNonNull().aliasInAndOut("sat.to").build();

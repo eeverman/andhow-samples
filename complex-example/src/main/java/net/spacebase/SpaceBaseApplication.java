@@ -26,13 +26,27 @@ public class SpaceBaseApplication {
 	 */
 	public static void main(String[] args) {
 		
-		//findConfig() will find the active AndHowConfiguration that would be used.
-		//If an AndHowTestInit class is on the classpath, it will be used to
-		//provide that configuration, which would be the case during testing.
+		//Calling findConfig()...build() is optional for AndHow - it would startup
+		//just fine the first time a Property is accessed.
+		//However, to insert command line arguments into what is parsed to read
+		//property values, this is the way to do it.
+		//
+		//findConfig() will find the AndHowInit implementation that will be used
+		//to initiate AndHow.  That could be the default imlementation or,
+		//if the project has a custom one on the classpath, it will use that one.
+		//This application *does* have a custom one called 'SpaceBaseInit'.
+		//
+		//Also, if there is an AndHowTestInit class is on the test classpath,
+		//it will be used during testing.
 		AndHow.findConfig().setCmdLineArgs(args).build();
 
 		System.out.println("Spacebase App is started!");
 		singleton = new SpaceBaseApplication();
+		
+		System.out.println("App name is: " + singleton.getAppName());
+		System.out.println("The PrivatePlanet secret is: " + new PrivatePlanet().getSecret());
+		System.out.println("The PublicPlanet broadcast url is: " + new PublicPlanet().getBroadcastUrl());
+		System.out.println("The ReallyOldSatelliteService timeout is: " + new ReallyOldSatelliteService().getTimeout());
 	}
 	
 	public static SpaceBaseApplication instance() {

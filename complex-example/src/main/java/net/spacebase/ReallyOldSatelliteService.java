@@ -1,8 +1,8 @@
 package net.spacebase;
 
 /**
- * This is an example of an old legacy service that relies on system properties
- * for its configuration.
+ * This is an example of an old legacy class that perhaps you cannot modify to
+ * use AndHow.  It relies on system properties for its configuration.
  * 
  * Likely its hard to get a complete list of its configuration properties or find
  * complete documentation for them.  On top of that, they are all passed
@@ -14,6 +14,8 @@ package net.spacebase;
  */
 public class ReallyOldSatelliteService {
 	
+	//
+	//Some old code you cannot change that reads configuration from Sys props:
 	public String getQueryUrl() {
 		return System.getProperty("sat.svs") + System.getProperty("sat.query");
 	}
@@ -23,13 +25,8 @@ public class ReallyOldSatelliteService {
 	}
 	
 	public int getTimeout() {
-		//-- Lots of legacy configuration code contains methods like this:
-		//unvalidated and 'late' type conversions.
-		//This may have configured as 'five', which won't be discovered until
-		//this method is called, potentially blosing up your application.
-		//--/--/
-		//Instead, see how this problem is neatly solved in this example using
-		//configuration properties in SatelliteServiceConfig.
+		//Yikes!  What happens if the "sat.to" sys prop is null or not an int??
+		//AndHow fixes this - see the SatelliteServiceConfig class
 		return Integer.parseInt(System.getProperty("sat.to"));
 	}
 
