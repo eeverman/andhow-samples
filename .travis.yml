@@ -27,10 +27,11 @@ matrix:
       osx_image: xcode10
     - os: osx
       osx_image: xcode10.1
-    - os: windows
-      jdk: jdk8
-    - os: windows
-      jdk: jdk10
+#    - os: windows
+#      jdk: jdk8
+#    - os: windows
+#      jdk: jdk10
+# As Windows isn't quite ready yet
 
 git:
   depth: 10
@@ -42,4 +43,11 @@ before_script:
   - mvn -version
   - echo $MAVEN_OPTS
 
-script: "mvn clean package"
+cache:
+  directories:
+    - $HOME/.m2/
+
+script:
+  - mvn clean
+  - mvn package -DskipTests
+  - mvn test
