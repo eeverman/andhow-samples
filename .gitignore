@@ -4,4 +4,7 @@
 **/.project
 **/dependency-reduced-pom.xml
 **/nbproject/
-**/nbproject/project.properties
+/.idea/
+.java-version
+nb-configuration.xml
+*.iml

@@ -4,7 +4,7 @@
 	<groupId>org.yarnandtail</groupId>
 	<artifactId>andhow-samples</artifactId>
 	<version>0.4.0</version>
-	
+
 	<!-- This really isn't meant to be packaged up at all - its sample code -->
 	<packaging>pom</packaging>
 	<name>AndHow Sample Usages</name>
@@ -53,6 +53,8 @@
 	</scm>
 
 	<properties>
+		<maven.compiler.source>${java.vm.specification.version}</maven.compiler.source>
+		<maven.compiler.target>${java.vm.specification.version}</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<andhow.version>0.4.0</andhow.version>
 		<maven-javadoc-plugin-version>2.10.4</maven-javadoc-plugin-version>
@@ -63,10 +65,10 @@
 		<module>complex-example</module>
 		<module>simple-using-string-args</module>
 		<module>sample-webapp</module>
-	 <module>load-config-from-filesystem</module>
-	 <module>readme-example</module>
+		<module>load-config-from-filesystem</module>
+		<module>readme-example</module>
 	</modules>
-	
+
 
 	<repositories>
 		<repository>
@@ -75,7 +77,7 @@
 			<url>http://repo1.maven.org/maven/</url>
 		</repository>
 	</repositories>
-	
+
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -109,28 +111,30 @@
 						<additionalparam>-Xdoclint:none</additionalparam>
 					</configuration>
 				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-enforcer-plugin</artifactId>
-					<version>3.0.0-M1</version>
-					<executions>
-						<execution>
-							<id>enforce-maven</id>
-							<goals>
-								<goal>enforce</goal>
-							</goals>
-							<configuration>
-								<rules>
-									<requireJavaVersion>
-										<!-- Need Java 8 or greater to build and run the samples -->
-										<version>[1.8.0,)</version>
-									</requireJavaVersion>
-								</rules>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
 			</plugins>
 		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>3.0.0-M1</version>
+				<executions>
+					<execution>
+						<id>enforce-maven</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<requireJavaVersion>
+									<!-- Need Java 8 or greater to build and run the samples -->
+									<version>[1.8.0,)</version>
+								</requireJavaVersion>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 </project>
