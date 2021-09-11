@@ -3,7 +3,7 @@
 
 	<groupId>org.yarnandtail</groupId>
 	<artifactId>andhow-samples</artifactId>
-	<version>0.4.0</version>
+	<version>0.4.2-SNAPSHOT</version>
 
 	<!-- This really isn't meant to be packaged up at all - its sample code -->
 	<packaging>pom</packaging>
@@ -53,28 +53,51 @@
 	</scm>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>${java.vm.specification.version}</maven.compiler.source>
 		<maven.compiler.target>${java.vm.specification.version}</maven.compiler.target>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<andhow.version>0.4.1</andhow.version>
-		<maven-javadoc-plugin-version>2.10.4</maven-javadoc-plugin-version>
-		<maven-source-plugin-version>2.4</maven-source-plugin-version>
+
+		<!-- dependency versions -->
+		<parent.andhow.version>0.4.2-SNAPSHOT</parent.andhow.version>
+		<parent.junit.version>5.7.2</parent.junit.version>
+		<parent.hamcrest.version>2.2</parent.hamcrest.version>
+		<!-- Plugin versions -->
+		<parent.maven-surefire-plugin.version>3.0.0-M5</parent.maven-surefire-plugin.version>
+		<parent.maven-javadoc-plugin.version>2.10.4</parent.maven-javadoc-plugin.version>
+		<parent.maven-source-plugin.version>2.4</parent.maven-source-plugin.version>
+		<parent.maven-enforcer-plugin.version>3.0.0-M1</parent.maven-enforcer-plugin.version>
+		<parent.maven-deploy-plugin.version>2.8.2</parent.maven-deploy-plugin.version>
 	</properties>
 
 	<modules>
 		<module>complex-example</module>
 		<module>simple-using-string-args</module>
-		<module>sample-webapp</module>
 		<module>load-config-from-filesystem</module>
 		<module>readme-example</module>
 	</modules>
-
 
 	<repositories>
 		<repository>
 			<id>repo1-maven</id>
 			<name>Repo1 Maven</name>
 			<url>http://repo1.maven.org/maven/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>sonatype-snapshot</id>
+			<name>Sonatype Snapshot Repo</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
 		</repository>
 	</repositories>
 
@@ -93,12 +116,12 @@
 				<plugin>
 					<inherited>true</inherited>
 					<artifactId>maven-deploy-plugin</artifactId>
-					<version>2.8.2</version>
+					<version>${parent.maven-deploy-plugin.version}</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-javadoc-plugin</artifactId>
-					<version>${maven-javadoc-plugin-version}</version>
+					<version>${parent.maven-javadoc-plugin.version}</version>
 					<executions>
 						<execution>
 							<id>attach-javadocs</id>
@@ -117,7 +140,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-enforcer-plugin</artifactId>
-				<version>3.0.0-M1</version>
+				<version>${parent.maven-enforcer-plugin.version}</version>
 				<executions>
 					<execution>
 						<id>enforce-maven</id>

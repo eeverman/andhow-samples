@@ -1,24 +1,21 @@
-/*
- */
 package net.spacebase;
 
-import java.time.LocalDateTime;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.yarnandtail.andhow.*;
+import org.yarnandtail.andhow.junit5.KillAndHowBeforeEachTest;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.*;
 
-/**
- *
- * @author ericeverman
- */
-public class SpaceBaseApplicationTest extends AndHowTestBase {
+import java.time.LocalDateTime;
+
+@KillAndHowBeforeEachTest
+public class SpaceBaseApplicationTest {
 	
 	public SpaceBaseApplicationTest() {
 	}
 	
-	@Before
+	@BeforeEach
 	public void setUp() {
 		//Zap the example test class each time
 		SpaceBaseApplication.singleton = null;

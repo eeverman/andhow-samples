@@ -16,7 +16,7 @@ public class SpaceBaseTestInit implements AndHowTestInit {
 
 	@Override
 	public AndHowConfiguration getConfiguration() {
-		return StdConfig.instance()
+		return AndHow.findConfig()
 				/* Just like SpaceBaseInit, but a slightly different url
 				so we can see the change */
 				.addFixedValue(PublicPlanet.CONFIG.BROADCAST.URL, "http://test.logserver.com/ps/")

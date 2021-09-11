@@ -1,17 +1,13 @@
-/*
- */
 package net.spacebase;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.yarnandtail.andhow.*;
+import org.yarnandtail.andhow.junit5.KillAndHowBeforeEachTest;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-/**
- *
- * @author ericeverman
- */
-public class PrivatePlanetTest extends AndHowTestBase {
+@KillAndHowBeforeEachTest
+public class PrivatePlanetTest {
 	
 
 	/**

@@ -1,9 +1,11 @@
 package org.simple;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.yarnandtail.andhow.*;
+import org.yarnandtail.andhow.junit5.KillAndHowBeforeEachTest;
+import org.yarnandtail.andhow.junit5.RestoreSysPropsAfterThisTest;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Simple testing example.
@@ -13,12 +15,14 @@ import static org.junit.Assert.*;
  * making it easy to test under multiple configuration scenarios.
  * 
  */
-public class GettingStartedTest extends AndHowTestBase {
+@KillAndHowBeforeEachTest
+public class GettingStartedTest {
 	
 	/**
 	 * Simple test
 	 */
 	@Test
+	@RestoreSysPropsAfterThisTest //AndHow provided Junit extension to erase System.property changes
 	public void testLaunch1_SetPropertiesWithSystemProps() {
 
 		//Set the LAUNCH_CMD via a system property
@@ -27,13 +31,13 @@ public class GettingStartedTest extends AndHowTestBase {
 
 		GettingStarted gs = new GettingStarted();
 		
-		//AndHow initiation happens automatically as soon as one of the properties
-		//is accessed.
+		//AndHow initiation happens automatically as soon as one of the properties is accessed.
 		assertEquals(Integer.valueOf(1), GettingStarted.COUNT_DOWN_START.getValue());
 		assertEquals("1...Go!Go!Go!", gs.launch());
 	}
 	
 	@Test
+	@RestoreSysPropsAfterThisTest //AndHow provided Junit extension to erase System.property changes
 	public void testLaunch2_SetPropertyWithSystemPropsAndDefault() {
 
 		//2 is the default for COUNT_DOWN_START, so let it be used
@@ -57,33 +61,13 @@ public class GettingStartedTest extends AndHowTestBase {
 		AndHow.findConfig().setCmdLineArgs(new String[] {
 			"org.simple.GettingStarted.COUNT_DOWN_START=4",
 			"org.simple.GettingStarted.LAUNCH_CMD=GoManGo!"
-		}).build();
-		
-		//Note that if the AndHowTestBase class is not used, calling build()
-		//would likely fail because AndHow would already be initialized.  In
-		//that case, use AndHowNonProduction instead (see the next test example).
-		
+		});
+
+
 		GettingStarted gs = new GettingStarted();
 		
 		assertEquals(Integer.valueOf(4), GettingStarted.COUNT_DOWN_START.getValue());
 		assertEquals("4...3...2...1...GoManGo!", gs.launch());
-	}
-	
-	@Test
-	public void testLaunch4_ForcingARebuildOfAndHow() throws Exception {
-		
-		//If the AndHowTestBase class is not used for testing, using a construct
-		//like this to for a rebuild of AndHow with a new configuration.  Note
-		//the use of NonProductionConfig and the forceBuild() method.
-		NonProductionConfig.instance().setCmdLineArgs(new String[] {
-			"org.simple.GettingStarted.COUNT_DOWN_START=5",
-			"org.simple.GettingStarted.LAUNCH_CMD=GoManGo!"
-		}).forceBuild();
-		
-		GettingStarted gs = new GettingStarted();
-		
-		assertEquals(Integer.valueOf(5), GettingStarted.COUNT_DOWN_START.getValue());
-		assertEquals("5...4...3...2...1...GoManGo!", gs.launch());
 	}
 	
 }

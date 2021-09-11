@@ -1,24 +1,17 @@
-/*
- */
 package org.simple;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import org.junit.Before;
-import org.junit.Test;
 import org.apache.commons.io.FileUtils;
-import org.junit.*;
-import org.yarnandtail.andhow.AndHow;
-import org.yarnandtail.andhow.AndHowTestBase;
+import org.yarnandtail.andhow.junit5.KillAndHowBeforeEachTest;
+import org.yarnandtail.andhow.junit5.RestoreSysPropsAfterThisTest;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.*;
 
-/**
- *
- * @author ericeverman
- */
-public class LoadFromFileSystemTest extends AndHowTestBase {
+@KillAndHowBeforeEachTest //AndHow provided Junit extension that allows each test to re-initialize AndHow
+public class LoadFromFileSystemTest {
 
 	public static final String CLASSPATH_OF_PROPS = "/copy_me_to_filesystem.properties";
 
@@ -27,7 +20,7 @@ public class LoadFromFileSystemTest extends AndHowTestBase {
 	public LoadFromFileSystemTest() {
 	}
 
-	@Before
+	@BeforeEach
 	public void setupTestFile() throws IOException {
 
 		//copy a properties file to a temp location
@@ -37,12 +30,13 @@ public class LoadFromFileSystemTest extends AndHowTestBase {
 		FileUtils.copyURLToFile(inputUrl, tempPropFile);
 	}
 
-	@After
+	@AfterEach
 	public void teardownTestFile() throws IOException {
 		tempPropFile.delete();
 	}
 
 	@Test
+	@RestoreSysPropsAfterThisTest //AndHow provided Junit extension to erase System.property changes
 	public void testConfigViaSysPropsWithoutSpecifyingAFileSystemPath()
 			throws IOException {
 
@@ -59,8 +53,9 @@ public class LoadFromFileSystemTest extends AndHowTestBase {
 	}
 
 	@Test
+	@RestoreSysPropsAfterThisTest //AndHow provided Junit extension to erase System.property changes
 	public void testConfigFromFilesystem() throws IOException {
-		
+
 		//Use a system property to specify which file to load config from.
 		//It would also work to specify this property via a main method, env. Var,
 		//or JNDI.

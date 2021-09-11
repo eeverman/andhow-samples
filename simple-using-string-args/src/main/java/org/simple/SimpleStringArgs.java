@@ -31,8 +31,7 @@ public class SimpleStringArgs {
 		
 		AndHow.findConfig()
 				.setCmdLineArgs(args)
-				.addFixedValue(NOTIFY_NEWS, false)	//turn off for cmd line use
-				.build();
+				.addFixedValue(NOTIFY_NEWS, false);
 		
 		SimpleStringArgs gs = new SimpleStringArgs();
 		System.out.println(gs.launch());

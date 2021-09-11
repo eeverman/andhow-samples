@@ -1,9 +1,11 @@
 package org.simple;
 
-import org.junit.Test;
 import org.yarnandtail.andhow.*;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.*;
+import org.yarnandtail.andhow.junit5.KillAndHowBeforeEachTest;
+import org.yarnandtail.andhow.junit5.RestoreSysPropsAfterThisTest;
 
 /**
  * Simple testing example.
@@ -13,7 +15,8 @@ import static org.junit.Assert.*;
  * making it easy to test under multiple configuration scenarios.
  * 
  */
-public class SimpleStringArgsTest extends AndHowTestBase {
+@KillAndHowBeforeEachTest //AndHow provided Junit extension that allows each test to re-initialize AndHow
+public class SimpleStringArgsTest {
 	
 	/**
 	 * Simple test
@@ -51,6 +54,7 @@ public class SimpleStringArgsTest extends AndHowTestBase {
 	}
 	
 	@Test
+	@RestoreSysPropsAfterThisTest //AndHow provided Junit extension to erase System.property changes
 	public void buildWithoutMainMethodAndLetDefaultNOTIFY_NEWSComeThru() {
 
 		//using sys props to set prop values
@@ -67,6 +71,7 @@ public class SimpleStringArgsTest extends AndHowTestBase {
 	}
 	
 	@Test
+	@RestoreSysPropsAfterThisTest //AndHow provided Junit extension to erase System.property changes
 	public void buildWithoutMainMethodAndSetNOTIFY_NEWS() {
 
 		//using sys props to set prop values
