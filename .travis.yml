@@ -1,17 +1,21 @@
 language: java
+virt: lxd #Not a full VM - faster startup w/ some limitations
 
 # since not all JDKs are available in all environments
 matrix:
   include:
     - os: linux
-      dist: trusty
+      dist: focal
       jdk: openjdk8
     - os: linux
-      dist: trusty
+      dist: focal
       jdk: openjdk9
     - os: linux
-      dist: trusty
-      jdk: openjdk9
+      dist: focal
+      jdk: openjdk11
+    - os: linux
+      dist: focal
+      jdk: openjdk16
 git:
   depth: 10
 
