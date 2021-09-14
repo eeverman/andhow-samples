@@ -64,7 +64,6 @@
 	<modules>
 		<module>complex-example</module>
 		<module>simple-using-string-args</module>
-		<module>sample-webapp</module>
 		<module>load-config-from-filesystem</module>
 		<module>readme-example</module>
 	</modules>
