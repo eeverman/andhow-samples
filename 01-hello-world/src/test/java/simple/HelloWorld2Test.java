@@ -1,11 +1,10 @@
-package org.simple;
+package simple;
 
 import org.junit.jupiter.api.Test;
 import org.yarnandtail.andhow.*;
 import org.yarnandtail.andhow.junit5.KillAndHowBeforeEachTest;
 import org.yarnandtail.andhow.junit5.RestoreSysPropsAfterThisTest;
-
-import static org.junit.jupiter.api.Assertions.*;
+import simple.HelloWorld2;
 
 /**
  * To keep the HelloWorld2 class as simple as possible, it just prints to Sys.out.
@@ -28,8 +27,8 @@ public class HelloWorld2Test {
 	public void readPropertyValuesFromSystemProperties() {
 
 		//Set Property values via system properties
-		System.setProperty("org.simple.HelloWorld2.Config.NAME", "Duke");
-		System.setProperty("org.simple.HelloWorld2.Config.REPEAT_COUNT", "3");
+		System.setProperty("simple.HelloWorld2.Config.NAME", "Duke");
+		System.setProperty("simple.HelloWorld2.Config.REPEAT_COUNT", "3");
 
 		System.out.println("Begin 'HelloWorld2Test.readPropertyValuesFromSystemProperties'");
 		HelloWorld2.main(null);	//Should print "Hello, Duke", 3 times

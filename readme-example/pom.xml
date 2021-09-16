@@ -65,7 +65,19 @@
 		</dependency>
 	</dependencies>
 	<build>
+		<finalName>app</finalName>
 		<plugins>
+			<plugin>
+				<!-- See the parent pom for more configuration of this plugin -->
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>org.simple.GettingStarted</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
 			<plugin>
 				<!-- Required to ensure tests are launched using the JUnit 5 platform -->
 				<groupId>org.apache.maven.plugins</groupId>

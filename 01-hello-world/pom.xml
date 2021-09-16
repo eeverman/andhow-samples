@@ -65,7 +65,47 @@
 		</dependency>
 	</dependencies>
 	<build>
+		<finalName>app</finalName>
 		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<!--
+				Used to create an executable w/ the example's code plus AndHow bundled into a
+				single jar. See the parent pom for more configuration of this plugin
+				 -->
+				<executions>
+					<execution>
+						<id>hello-1</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<finalName>app-all-1</finalName>
+							<archive>
+								<manifest>
+									<mainClass>simple.HelloWorld</mainClass>
+								</manifest>
+							</archive>
+						</configuration>
+					</execution>
+					<execution>
+						<id>hello-2</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<finalName>app-all-2</finalName>
+							<archive>
+								<manifest>
+									<mainClass>simple.HelloWorld2</mainClass>
+								</manifest>
+							</archive>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<!-- Required to ensure tests are launched using the JUnit 5 platform -->
 				<groupId>org.apache.maven.plugins</groupId>

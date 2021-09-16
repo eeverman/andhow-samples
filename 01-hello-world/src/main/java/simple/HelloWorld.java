@@ -1,26 +1,31 @@
-package org.simple;
+package simple;
 
 import org.yarnandtail.andhow.AndHow;
 import org.yarnandtail.andhow.property.*;
 
 /**
- * This is the example from the AndHow project's Readme file.
- * 
+ * The classic HelloWorld for AndHow...
+ * <hr>
  * <h3>Section //1 : Declare AndHow Properties</h3>
- * {@code StrProp} & {@code IntProp} are AndHow {@code Property}'s.
+ * {@code StrProp} &amp; {@code IntProp} are AndHow {@code Property}'s.
  * Properties are created as <em>constants</em> in your application, thus, they are always
  * {@code final static}, but may be {@code private} or any scope.
- * Properties are strongly typed, so default values and validation are type specific, e.g.
- * defaults of {@code "Dave"} vs {@code 1}.<br/>
- * {@code builder()} methods simplify Property construction.
+ * Properties are strongly typed, so default values and validation are type specific.
  * 
  * <h3>Section //2 : Using AndHow Properties</h3>
  * Properties are used just like static final constants with {@code .getValue()} tacked on.
  * Strong typing means that {@code NAME.getValue()} returns a {@code String} while
  * {@code REPEAT_COUNT.getValue()} returns an {@code Integer}.
  * <p>
- * Since these Properties declare default values, no added configuration is required to run
- * this example: running {@code HelloWorld.main()} will print {@code Hello, Dave} twice.
+ * These Properties have defaults, so no further configuration is needed:
+ * running {@code HelloWorld.main()} will print <b>{@code Hello, Dave}</b> twice.
+ * We can override the defaults by adding a {@code andhow.properties} file on the
+ * classpath like this:
+ * <pre>{@code
+ * simple.HelloWorld.NAME: Kathy
+ * simple.HelloWorld.REPEAT_COUNT: 4
+ * }</pre>
+ * Resulting in <b>{@code Hello, Kathy}</b> x4.
  */
 public class HelloWorld {
 	

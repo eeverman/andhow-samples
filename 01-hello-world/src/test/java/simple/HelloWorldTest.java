@@ -1,11 +1,10 @@
-package org.simple;
+package simple;
 
 import org.junit.jupiter.api.Test;
 import org.yarnandtail.andhow.*;
 import org.yarnandtail.andhow.junit5.KillAndHowBeforeEachTest;
 import org.yarnandtail.andhow.junit5.RestoreSysPropsAfterThisTest;
-
-import static org.junit.jupiter.api.Assertions.*;
+import simple.HelloWorld;
 
 /**
  * Very simplistic test.
@@ -48,7 +47,7 @@ public class HelloWorldTest {
 		AndHow.findConfig().setClasspathPropFilePath("/helloworld.properties");
 
 		System.out.println("Begin 'HelloWorldTest.readPropertyValuesFromPropertyFile'");
-		HelloWorld.main(null);	//Should print "Hello, Dawn", 4 times
+		HelloWorld.main(null);	//Should print "Hello, Kathy", 4 times
 
 	}
 	
