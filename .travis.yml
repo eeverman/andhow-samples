@@ -1,39 +1,23 @@
 language: java
+  virt: lxd #Not a full VM - faster startup w/ some limitations
 
-# since not all JDKs are available in all environments
-matrix:
-  include:
-    - os: linux
-      dist: trusty
-      jdk: openjdk8
-    - os: linux
-      dist: trusty
-      jdk: oraclejdk8
-    - os: linux
-      dist: trusty
-      jdk: oraclejdk9
-    - os: linux
-      dist: trusty
-      jdk: openjdk10
-    - os: linux
-      dist: trusty
-      jdk: openjdk11
-    - os: linux
-      dist: trusty
-      jdk: oraclejdk11
-    - os: linux
-      dist: trusty
-      jdk: openjdk15
-    - os: osx
-      osx_image: xcode10.1
-#    - os: windows
-#      jdk: jdk8
-#    - os: windows
-#      jdk: jdk10
-# As Windows isn't quite ready yet
-
-git:
-  depth: 10
+  # since not all JDKs are available in all environments
+  matrix:
+    include:
+      - os: linux
+        dist: bionic
+        jdk: openjdk8
+#      - os: linux
+#        dist: focal
+#        jdk: openjdk9
+#      - os: linux
+#        dist: focal
+#        jdk: openjdk11
+      - os: linux
+        dist: focal
+        jdk: openjdk16
+  git:
+    depth: 1
 
 before_script:
   - echo $HOME

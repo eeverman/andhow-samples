@@ -6,11 +6,11 @@
 		<version>0.4.2-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>readme-example</artifactId>
+	<artifactId>01-hello-world</artifactId>
 	
 	<!-- This really isn't meant to be packaged up at all - its sample code -->
 	<packaging>jar</packaging>
-	<name>readme-example</name>
+	<name>01-hello-world</name>
 	<description>
 		The usage example on the main page of the AndHow Project:
 		https://github.com/eeverman/andhow
@@ -68,15 +68,43 @@
 		<finalName>app</finalName>
 		<plugins>
 			<plugin>
-				<!-- See the parent pom for more configuration of this plugin -->
 				<artifactId>maven-assembly-plugin</artifactId>
-				<configuration>
-					<archive>
-						<manifest>
-							<mainClass>org.simple.GettingStarted</mainClass>
-						</manifest>
-					</archive>
-				</configuration>
+				<!--
+				Used to create an executable w/ the example's code plus AndHow bundled into a
+				single jar. See the parent pom for more configuration of this plugin
+				 -->
+				<executions>
+					<execution>
+						<id>hello-1</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<finalName>app-all-1</finalName>
+							<archive>
+								<manifest>
+									<mainClass>simple.HelloWorld</mainClass>
+								</manifest>
+							</archive>
+						</configuration>
+					</execution>
+					<execution>
+						<id>hello-2</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<finalName>app-all-2</finalName>
+							<archive>
+								<manifest>
+									<mainClass>simple.HelloWorld2</mainClass>
+								</manifest>
+							</archive>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<!-- Required to ensure tests are launched using the JUnit 5 platform -->

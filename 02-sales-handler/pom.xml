@@ -1,18 +1,22 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<parent>
-		<groupId>org.yarnandtail</groupId>
 		<artifactId>andhow-samples</artifactId>
+		<groupId>org.yarnandtail</groupId>
 		<version>0.4.2-SNAPSHOT</version>
 	</parent>
+	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>readme-example</artifactId>
-	
+	<artifactId>02-sales-handler</artifactId>
+
+
 	<!-- This really isn't meant to be packaged up at all - its sample code -->
 	<packaging>jar</packaging>
-	<name>readme-example</name>
+	<name>02-sales-handler</name>
 	<description>
-		The usage example on the main page of the AndHow Project:
+		A usage example on the main page of the AndHow Project:
 		https://github.com/eeverman/andhow
 	</description>
 
@@ -68,15 +72,28 @@
 		<finalName>app</finalName>
 		<plugins>
 			<plugin>
-				<!-- See the parent pom for more configuration of this plugin -->
 				<artifactId>maven-assembly-plugin</artifactId>
-				<configuration>
-					<archive>
-						<manifest>
-							<mainClass>org.simple.GettingStarted</mainClass>
-						</manifest>
-					</archive>
-				</configuration>
+				<!--
+				Used to create an executable w/ the example's code plus AndHow bundled into a
+				single jar. See the parent pom for more configuration of this plugin
+				 -->
+				<executions>
+					<execution>
+						<id>sales-1</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<finalName>app-all-1</finalName>
+							<archive>
+								<manifest>
+									<mainClass>simple.HelloWorld</mainClass>
+								</manifest>
+							</archive>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<!-- Required to ensure tests are launched using the JUnit 5 platform -->
