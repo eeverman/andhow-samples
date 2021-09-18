@@ -1,7 +1,9 @@
 package simple;
 
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 import org.yarnandtail.andhow.*;
+import org.yarnandtail.andhow.api.AppFatalException;
 import org.yarnandtail.andhow.junit5.KillAndHowBeforeEachTest;
 import org.yarnandtail.andhow.junit5.RestoreSysPropsAfterThisTest;
 import simple.HelloWorld2;
@@ -45,6 +47,23 @@ public class HelloWorld2Test {
 		System.out.println("Begin 'HelloWorld2Test.readPropertyValuesFromPropertyFile'");
 		HelloWorld2.main(null);	//Should print "Hello, Dawn", 4 times
 
+	}
+
+	@Test
+	public void setInvalidNameValueThrowsAnError() {
+
+		System.out.println("Begin 'HelloWorld2Test.setInvalidNameValueThrowsAnError'");
+
+		assertThrows(AppFatalException.class,
+				() -> HelloWorld2.main(new String[] {"simple.HelloWorld2.Config.NAME=Bar"}));
+	}
+
+	@Test
+	public void demonstrateCausingConfigTemplateToBeWritten() {
+
+		System.out.println("Begin 'HelloWorld2Test.demonstrateCausingConfigTemplateToBeWritten'");
+
+		HelloWorld2.main(new String[] {"AHForceCreateSamples"});
 	}
 	
 }

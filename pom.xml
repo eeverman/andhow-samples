@@ -76,6 +76,7 @@
 		<module>simple-using-string-args</module>
 		<module>load-config-from-filesystem</module>
 		<module>readme-example</module>
+		<module>02-sales-handler</module>
 	</modules>
 
 	<repositories>
