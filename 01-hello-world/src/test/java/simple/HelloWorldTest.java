@@ -43,7 +43,7 @@ public class HelloWorldTest {
 	@RestoreSysPropsAfterThisTest //AndHow provided Junit extension to erase System.property changes
 	public void readPropertyValuesFromPropertyFile() {
 
-		//Find the AndHow configuration and tell it to use a 
+		//Find the AndHow configuration and tell it to use a different config file
 		AndHow.findConfig().setClasspathPropFilePath("/helloworld.properties");
 
 		System.out.println("Begin 'HelloWorldTest.readPropertyValuesFromPropertyFile'");
