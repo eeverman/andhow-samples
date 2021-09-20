@@ -49,7 +49,6 @@ public class HelloWorld2 {
 			
 		// 3 Use
 		for (int i = 0; i < Config.REPEAT_COUNT.getValue(); i++) {
-			System.out.println(Config.NAME.getCanonicalName());
 			System.out.println("Hello, " + Config.NAME.getValue());
 		}
 	}
