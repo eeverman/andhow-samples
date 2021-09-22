@@ -30,6 +30,7 @@ public class SaleDaoTest {
 		// is to not export canonical names if there is an 'out' alias on the Property.
 		assertFalse(props.containsKey("simple.SaleDao.Db.PWD"));
 		assertFalse(props.containsKey("simple.SaleDao.Db.URL"));
+
 	}
 
 	
