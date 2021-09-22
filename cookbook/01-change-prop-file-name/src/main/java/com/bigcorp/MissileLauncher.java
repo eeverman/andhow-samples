@@ -22,11 +22,10 @@ public class MissileLauncher {
 		return Config.COUNT_DOWN.getValue();
 	}
 
-	public Double setTarget(Double lat, Double lng) {
+	public BigDecimal setTarget(BigDecimal lat, BigDecimal lng) {
 		DistanceCalculator calc = new DistanceCalculator();
 
-		BigDecimal dist = calc.calcDistanceTo(BigDecimal.valueOf(lat), BigDecimal.valueOf(lng));
-		return dist.doubleValue();
+		return calc.calcDistanceTo(lat, lng);
 	}
 
 	public String launch() {

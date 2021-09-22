@@ -42,6 +42,9 @@ public class DistanceCalculator {
 		BigDecimal latDist = getBaseLatitude().subtract(latitude).abs();
 		BigDecimal longDist = getBaseLongitude().subtract(longitude).abs();
 
-		return latDist.pow(2).add( longDist.pow(2) ).sqrt(MathContext.DECIMAL32);
+		BigDecimal total = latDist.pow(2).add( longDist.pow(2) );
+
+		//BigDecimal in JRE 1.8 doesn't have a sqrt...
+		return BigDecimal.valueOf( Math.sqrt(total.doubleValue()) );
 	}
 }
