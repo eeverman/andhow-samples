@@ -9,12 +9,12 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>02-sales-handler</artifactId>
+	<artifactId>03-sales-handler</artifactId>
 
 
 	<!-- This really isn't meant to be packaged up at all - its sample code -->
 	<packaging>jar</packaging>
-	<name>02-sales-handler</name>
+	<name>03-sales-handler</name>
 	<description>
 		A usage example on the main page of the AndHow Project:
 		https://github.com/eeverman/andhow
