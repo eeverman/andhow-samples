@@ -54,13 +54,12 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>${java.vm.specification.version}</maven.compiler.source>
-		<maven.compiler.target>${java.vm.specification.version}</maven.compiler.target>
 
 		<!-- dependency versions -->
-		<parent.andhow.version>0.4.2-SNAPSHOT</parent.andhow.version>
+		<parent.andhow.version>0.4.2-rc4</parent.andhow.version>
 		<parent.junit.version>5.7.2</parent.junit.version>
 		<parent.hamcrest.version>2.2</parent.hamcrest.version>
+
 		<!-- Plugin versions -->
 		<parent.maven-surefire-plugin.version>3.0.0-M5</parent.maven-surefire-plugin.version>
 		<parent.maven-javadoc-plugin.version>2.10.4</parent.maven-javadoc-plugin.version>
@@ -77,6 +76,7 @@
 		<module>load-config-from-filesystem</module>
 		<module>readme-example</module>
 		<module>02-sales-handler</module>
+		<module>cookbook/01-change-prop-file-name</module>
 	</modules>
 
 	<repositories>
@@ -117,7 +117,6 @@
 					</configuration>
 				</plugin>
 				<plugin>
-					<inherited>true</inherited>
 					<artifactId>maven-deploy-plugin</artifactId>
 					<version>${parent.maven-deploy-plugin.version}</version>
 				</plugin>
@@ -148,40 +147,16 @@
 						<appendAssemblyId>false</appendAssemblyId>
 						<attach>false</attach>
 					</configuration>
-<!--					<executions>-->
-<!--						<execution>-->
-<!--&lt;!&ndash;							<inherited>false</inherited>&ndash;&gt;-->
-<!--							<phase>package</phase>-->
-<!--							<goals>-->
-<!--								<goal>single</goal>-->
-<!--							</goals>-->
-<!--						</execution>-->
-<!--					</executions>-->
+					<executions>
+						<execution>
+							<phase>package</phase>
+							<goals>
+								<goal>single</goal>
+							</goals>
+						</execution>
+					</executions>
 				</plugin>
 			</plugins>
 		</pluginManagement>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-enforcer-plugin</artifactId>
-				<version>${parent.maven-enforcer-plugin.version}</version>
-				<executions>
-					<execution>
-						<id>enforce-maven</id>
-						<goals>
-							<goal>enforce</goal>
-						</goals>
-						<configuration>
-							<rules>
-								<requireJavaVersion>
-									<!-- Need Java 8 or greater to build and run the samples -->
-									<version>[1.8.0,)</version>
-								</requireJavaVersion>
-							</rules>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
 	</build>
 </project>
