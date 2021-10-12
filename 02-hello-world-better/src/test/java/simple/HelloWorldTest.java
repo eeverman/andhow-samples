@@ -6,7 +6,7 @@ import org.yarnandtail.andhow.*;
 import org.yarnandtail.andhow.api.AppFatalException;
 import org.yarnandtail.andhow.junit5.KillAndHowBeforeEachTest;
 import org.yarnandtail.andhow.junit5.RestoreSysPropsAfterThisTest;
-import simple.HelloWorld2;
+import simple.HelloWorld;
 
 /**
  * To keep the HelloWorld2 class as simple as possible, it just prints to Sys.out.
@@ -15,13 +15,13 @@ import simple.HelloWorld2;
  * in the other samples.
  */
 @KillAndHowBeforeEachTest
-public class HelloWorld2Test {
+public class HelloWorldTest {
 	
 	@Test
 	public void verySimpleDefaultTest() {
 
-		System.out.println("Begin 'HelloWorld2Test.verySimpleDefaultTest'");
-		HelloWorld2.main(null);	//Should print "Hello, Dave" twice
+		System.out.println("Begin 'HelloWorldTest.verySimpleDefaultTest'");
+		HelloWorld.main(null);	//Should print "Hello, Dave" twice
 	}
 	
 	@Test
@@ -29,11 +29,11 @@ public class HelloWorld2Test {
 	public void readPropertyValuesFromSystemProperties() {
 
 		//Set Property values via system properties
-		System.setProperty("simple.HelloWorld2.Config.NAME", "Duke");
-		System.setProperty("simple.HelloWorld2.Config.REPEAT_COUNT", "3");
+		System.setProperty("simple.HelloWorld.Config.NAME", "Duke");
+		System.setProperty("simple.HelloWorld.Config.REPEAT_COUNT", "3");
 
-		System.out.println("Begin 'HelloWorld2Test.readPropertyValuesFromSystemProperties'");
-		HelloWorld2.main(null);	//Should print "Hello, Duke", 3 times
+		System.out.println("Begin 'HelloWorldTest.readPropertyValuesFromSystemProperties'");
+		HelloWorld.main(null);	//Should print "Hello, Duke", 3 times
 
 	}
 	
@@ -42,28 +42,28 @@ public class HelloWorld2Test {
 	public void readPropertyValuesFromPropertyFile() {
 
 		//Find the AndHow configuration and tell it to use a different config file
-		AndHow.findConfig().setClasspathPropFilePath("/helloworld2.properties");
+		AndHow.findConfig().setClasspathPropFilePath("/helloworld.properties");
 
-		System.out.println("Begin 'HelloWorld2Test.readPropertyValuesFromPropertyFile'");
-		HelloWorld2.main(null);	//Should print "Hello, Dawn", 4 times
+		System.out.println("Begin 'HelloWorldTest.readPropertyValuesFromPropertyFile'");
+		HelloWorld.main(null);	//Should print "Hello, Dawn", 4 times
 
 	}
 
 	@Test
 	public void setInvalidNameValueThrowsAnError() {
 
-		System.out.println("Begin 'HelloWorld2Test.setInvalidNameValueThrowsAnError'");
+		System.out.println("Begin 'HelloWorldTest.setInvalidNameValueThrowsAnError'");
 
 		assertThrows(AppFatalException.class,
-				() -> HelloWorld2.main(new String[] {"simple.HelloWorld2.Config.NAME=Bar"}));
+				() -> HelloWorld.main(new String[] {"simple.HelloWorld.Config.NAME=Bar"}));
 	}
 
 	@Test
 	public void demonstrateCausingConfigTemplateToBeWritten() {
 
-		System.out.println("Begin 'HelloWorld2Test.demonstrateCausingConfigTemplateToBeWritten'");
+		System.out.println("Begin 'HelloWorldTest.demonstrateCausingConfigTemplateToBeWritten'");
 
-		HelloWorld2.main(new String[] {"AHForceCreateSamples"});
+		HelloWorld.main(new String[] {"AHForceCreateSamples"});
 	}
 	
 }

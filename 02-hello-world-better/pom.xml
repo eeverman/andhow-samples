@@ -6,11 +6,11 @@
 		<version>0.4.2-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>01-hello-world</artifactId>
+	<artifactId>02-hello-world-better</artifactId>
 	
 	<!-- This really isn't meant to be packaged up at all - its sample code -->
 	<packaging>jar</packaging>
-	<name>01-hello-world</name>
+	<name>02-hello-world-better</name>
 	<description>
 		The usage example on the main page of the AndHow Project:
 		https://github.com/eeverman/andhow

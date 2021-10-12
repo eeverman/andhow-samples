@@ -31,7 +31,7 @@ import org.yarnandtail.andhow.property.*;
  * Note the 'name' for NAME: Java canonical names are used to read Property values, ensuring name
  * uniqueness.
  */
-public class HelloWorld2 {
+public class HelloWorld {
 
 	// 1 Declare
 	private static interface Config {

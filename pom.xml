@@ -71,11 +71,12 @@
 
 	<modules>
 		<module>01-hello-world</module>
+		<module>02-hello-world-better</module>
+		<module>03-sales-handler</module>
 		<module>complex-example</module>
 		<module>simple-using-string-args</module>
 		<module>load-config-from-filesystem</module>
 		<module>readme-example</module>
-		<module>02-sales-handler</module>
 		<module>cookbook/01-change-prop-file-name</module>
 	</modules>
 
@@ -124,16 +125,8 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-javadoc-plugin</artifactId>
 					<version>${parent.maven-javadoc-plugin.version}</version>
-					<executions>
-						<execution>
-							<id>attach-javadocs</id>
-							<goals>
-								<goal>jar</goal>
-							</goals>
-						</execution>
-					</executions>
 					<configuration>
-						<additionalparam>-Xdoclint:none</additionalparam>
+						<skip>true</skip>
 					</configuration>
 				</plugin>
 				<plugin>
@@ -143,7 +136,7 @@
 						<descriptorRefs>
 							<descriptorRef>jar-with-dependencies</descriptorRef>
 						</descriptorRefs>
-						<finalName>app-all</finalName>
+						<finalName>app</finalName>
 						<appendAssemblyId>false</appendAssemblyId>
 						<attach>false</attach>
 					</configuration>
