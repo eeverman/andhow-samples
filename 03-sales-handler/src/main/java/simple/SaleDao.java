@@ -13,9 +13,9 @@ public class SaleDao {
 	// 2 Declare DB connection Properties
 	@ManualExportAllowed
 	private static interface Db {
-		StrProp URL = StrProp.builder().mustStartWith("jdbc://").mustBeNonNull()
+		StrProp URL = StrProp.builder().startsWith("jdbc://").notNull()
 				.aliasInAndOut("hibernate.connection.url").build();
-		StrProp PWD = StrProp.builder().mustBeNonNull()
+		StrProp PWD = StrProp.builder().notNull()
 				.aliasInAndOut("hibernate.connection.password").build();
 	}
 

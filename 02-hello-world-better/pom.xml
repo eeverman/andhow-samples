@@ -76,7 +76,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>simple.HelloWorld</mainClass>
+							<mainClass>simple.HelloWorld2</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

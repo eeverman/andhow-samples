@@ -9,8 +9,8 @@
 		<version>0.4.2-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>01-change-prop-file-name</artifactId>
-	<name>01-change-prop-file-name</name>
+	<artifactId>02-manual-export</artifactId>
+	<name>02-manual-export</name>
 
 	<description>
 		A usage example on the main page of the AndHow Project: https://github.com/eeverman/andhow

@@ -9,31 +9,12 @@
 		<version>0.4.2-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>01-change-prop-file-name</artifactId>
-	<name>01-change-prop-file-name</name>
+	<artifactId>21-modify-loader-order</artifactId>
+	<name>21-modify-loader-order</name>
 
 	<description>
 		A usage example on the main page of the AndHow Project: https://github.com/eeverman/andhow
 	</description>
 	<packaging>jar</packaging>
 
-	<build>
-		<finalName>app</finalName>
-		<plugins>
-			<plugin>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<!--
-				Used to create an executable w/ the example's code plus AndHow bundled into a
-				single jar. See the parent pom for more configuration of this plugin
-				 -->
-				<configuration>
-					<archive>
-						<manifest>
-							<mainClass>XXX</mainClass>
-						</manifest>
-					</archive>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 </project>
