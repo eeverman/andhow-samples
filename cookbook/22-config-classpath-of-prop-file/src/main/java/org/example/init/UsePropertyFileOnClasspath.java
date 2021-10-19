@@ -38,7 +38,7 @@ public class UsePropertyFileOnClasspath implements AndHowInit {
 
 	@Override
 	public AndHowConfiguration getConfiguration() {
-		return  StdConfig.instance()
+		return  AndHow.findConfig()
 				.setClasspathPropFilePath(MY_CLASSPATH);
 	}
 }

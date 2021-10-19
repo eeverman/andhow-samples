@@ -17,7 +17,7 @@ import static org.hamcrest.Matchers.hasEntry;
  * These simple tests don't do much - just show how it might be setup
  */
 @KillAndHowBeforeEachTest
-class HibernateInitTest {
+class AppDataAccessTest {
 
 	@Test
 	void getHibernateProperties() throws IllegalAccessException {
@@ -26,12 +26,11 @@ class HibernateInitTest {
 
 		Properties export = dao.getHibernateProperties();
 
-		assertThat(export, hasEntry("hibernate.connection.url", "jdbc:myorasql://host:3306/mydb"));
 		assertThat(export, hasEntry("hibernate.connection.username", "bob"));
 		assertThat(export, hasEntry("hibernate.connection.password", "secret"));
 		assertThat(export, hasEntry("hibernate.connection.pool_size", "2"));
 		assertThat(export, hasEntry("pin", "1234"));
-		assertEquals(5, export.size());
+		assertEquals(4, export.size());
 	}
 
 	@Test
@@ -39,7 +38,7 @@ class HibernateInitTest {
 		Map<String, String> export = AndHow.instance().export(AppDataAccess.class)
 				.collect(ExportCollector.stringMap());
 
-		assertEquals(5, export.size());
+		assertEquals(4, export.size());
 
 	}
 

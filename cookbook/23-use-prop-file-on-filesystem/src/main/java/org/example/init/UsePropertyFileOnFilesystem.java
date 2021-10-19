@@ -32,7 +32,7 @@ public class UsePropertyFileOnFilesystem implements AndHowInit {
 
 	@Override
 	public AndHowConfiguration getConfiguration() {
-		return  StdConfig.instance()
+		return  AndHow.findConfig()
 				.setFilesystemPropFilePath(MY_PROP_FILE_ON_FILESYSTEM);
 	}
 }

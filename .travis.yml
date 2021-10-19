@@ -32,5 +32,4 @@ cache:
     - $HOME/.m2/
 
 script:
-  - mvn clean
-  - mvn test
+  - mvn -T 1C clean test

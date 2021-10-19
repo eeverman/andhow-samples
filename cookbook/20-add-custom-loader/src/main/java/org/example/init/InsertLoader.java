@@ -28,7 +28,7 @@ public class InsertLoader implements AndHowInit {
 		PropFileOnClasspathLoader pfl = new PropFileOnClasspathLoader();
 		pfl.setFilePath("/my.properties");
 		
-		return  StdConfig.instance()
+		return  AndHow.findConfig()
 				.insertLoaderBefore(StdJndiLoader.class, pfl);
 	}
 }
