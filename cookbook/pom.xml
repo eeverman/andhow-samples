@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>andhow-samples</artifactId>
+		<groupId>org.yarnandtail</groupId>
+		<version>0.4.2-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>cookbook</artifactId>
+
+	<packaging>pom</packaging>
+	<name>cookbook</name>
+	<description>
+		A collection of simple usage examples, each demonstrating a specific feature
+		or use case.
+	</description>
+
+	<modules>
+		<module>01-properties</module>
+		<!-- Loader examples -->
+		<module>20-add-custom-loader</module>
+		<module>21-modify-loader-order</module>
+		<module>22-config-classpath-of-prop-file</module>
+		<module>23-use-prop-file-on-filesystem</module>
+
+		<!-- Export examples -->
+		<module>40-manual-export</module>
+	</modules>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.yarnandtail</groupId>
+			<artifactId>andhow</artifactId>
+		</dependency>
+		<dependency>
+			<!-- AndHow Utils for unit testing apps using AndHow -->
+			<groupId>org.yarnandtail</groupId>
+			<artifactId>andhow-junit5-extensions</artifactId>
+		</dependency>
+		<dependency>
+			<!-- Handy utils for additional test asserts -->
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>andhow-samples</artifactId>
+		<groupId>org.yarnandtail</groupId>
+		<version>0.4.2-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>extras</artifactId>
+
+	<packaging>pom</packaging>
+	<name>extras</name>
+	<description>
+		Usage examples that are redundant, not complete, or generally not ready for prime time.
+	</description>
+
+	<modules>
+		<module>01-change-prop-file-name</module>
+	</modules>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.yarnandtail</groupId>
+			<artifactId>andhow</artifactId>
+		</dependency>
+		<dependency>
+			<!-- AndHow Utils for unit testing apps using AndHow -->
+			<groupId>org.yarnandtail</groupId>
+			<artifactId>andhow-junit5-extensions</artifactId>
+		</dependency>
+		<dependency>
+			<!-- Handy utils for additional test asserts -->
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>

@@ -1,16 +1,14 @@
 package simple;
 
 import org.yarnandtail.andhow.property.BigDecProp;
-
 import java.math.BigDecimal;
-
 
 public class SaleHandler {
 
 	// 1 Declare configuration Property's for this class
 	public static interface Config {
-		BigDecProp TAX_RATE = BigDecProp.builder().mustBeGreaterThan(BigDecimal.ZERO)
-				.mustBeNonNull().desc("Tax rate as a decimal, eg .10").aliasIn("tax").build();
+		BigDecProp TAX_RATE = BigDecProp.builder().greaterThan(BigDecimal.ZERO)
+				.notNull().desc("Tax rate as a decimal, eg .10").aliasIn("tax").build();
 	}
 
 	// Perhaps a lambda endpoint, service endpoint, etc.
