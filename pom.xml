@@ -59,7 +59,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- dependency versions -->
-		<parent.andhow.version>0.4.2-rc5</parent.andhow.version>
+		<parent.andhow.version>0.4.2-rc6-SNAPSHOT</parent.andhow.version>
 		<parent.junit.version>5.7.2</parent.junit.version>
 		<parent.hamcrest.version>2.2</parent.hamcrest.version>
 
