@@ -13,7 +13,7 @@
 	<name>22-config-classpath-of-prop-file</name>
 
 	<description>
-		A usage example on the main page of the AndHow Project: https://github.com/eeverman/andhow
+		A usage example for AndHow: https://github.com/eeverman/andhow
 	</description>
 	<packaging>jar</packaging>
 

@@ -7,25 +7,16 @@
 		<version>0.4.2-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>cookbook</artifactId>
+	<artifactId>extras</artifactId>
 
 	<packaging>pom</packaging>
-	<name>cookbook</name>
+	<name>extras</name>
 	<description>
-		A collection of simple usage examples, each demonstrating a specific feature
-		or use case.
+		Usage examples that are redundant, not complete, or generally not ready for prime time.
 	</description>
 
 	<modules>
-		<module>01-properties</module>
-		<!-- Loader examples -->
-		<module>20-add-custom-loader</module>
-		<module>21-modify-loader-order</module>
-		<module>22-config-classpath-of-prop-file</module>
-		<module>23-use-prop-file-on-filesystem</module>
-
-		<!-- Export examples -->
-		<module>40-manual-export</module>
+		<module>01-change-prop-file-name</module>
 	</modules>
 
 	<dependencies>

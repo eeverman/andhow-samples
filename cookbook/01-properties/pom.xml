@@ -9,8 +9,8 @@
 		<version>0.4.2-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>20-add-custom-loader</artifactId>
-	<name>20-add-custom-loader</name>
+	<artifactId>01-properties</artifactId>
+	<name>01-properties</name>
 
 	<description>
 		A usage example for AndHow: https://github.com/eeverman/andhow

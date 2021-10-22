@@ -9,11 +9,11 @@
 		<version>0.4.2-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>01-change-prop-file-name</artifactId>
-	<name>01-change-prop-file-name</name>
+	<artifactId>40-manual-export</artifactId>
+	<name>40-manual-export</name>
 
 	<description>
-		A usage example on the main page of the AndHow Project: https://github.com/eeverman/andhow
+		A usage example for AndHow: https://github.com/eeverman/andhow
 	</description>
 	<packaging>jar</packaging>
 

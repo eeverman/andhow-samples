@@ -4,16 +4,16 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<artifactId>cookbook</artifactId>
+		<artifactId>extras</artifactId>
 		<groupId>org.yarnandtail</groupId>
 		<version>0.4.2-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>02-manual-export</artifactId>
-	<name>02-manual-export</name>
+	<artifactId>01-change-prop-file-name</artifactId>
+	<name>01-change-prop-file-name</name>
 
 	<description>
-		A usage example on the main page of the AndHow Project: https://github.com/eeverman/andhow
+		A usage example for AndHow: https://github.com/eeverman/andhow
 	</description>
 	<packaging>jar</packaging>
 

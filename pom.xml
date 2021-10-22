@@ -82,6 +82,7 @@
 		<module>load-config-from-filesystem</module>
 		<module>readme-example</module>
 		<module>single-class-examples-from-docs</module>
+		<module>extras</module>
 	</modules>
 
 	<repositories>
