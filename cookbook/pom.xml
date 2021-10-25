@@ -18,6 +18,8 @@
 
 	<modules>
 		<module>01-properties</module>
+		<module>10-testing</module>
+
 		<!-- Loader examples -->
 		<module>20-add-custom-loader</module>
 		<module>21-modify-loader-order</module>
