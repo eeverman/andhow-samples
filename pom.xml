@@ -75,13 +75,8 @@
 	<modules>
 		<module>01-hello-world</module>
 		<module>02-hello-world-better</module>
-		<module>03-sales-handler</module>
-		<module>complex-example</module>
+		<module>99-larger-example</module>
 		<module>cookbook</module>
-		<module>simple-using-string-args</module>
-		<module>load-config-from-filesystem</module>
-		<module>readme-example</module>
-		<module>single-class-examples-from-docs</module>
 		<module>extras</module>
 	</modules>
 
