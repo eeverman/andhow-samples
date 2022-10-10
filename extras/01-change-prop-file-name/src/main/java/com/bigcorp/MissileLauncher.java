@@ -10,7 +10,7 @@ public class MissileLauncher {
 		BolProp ENABLE = BolProp.builder().defaultValue(false).
 				desc("Set true to enable missile launch. " +
 						"Please set to false in TEST and QA environments!").build();
-		IntProp COUNT_DOWN = IntProp.builder().defaultValue(3).mustBeGreaterThan(1).
+		IntProp COUNT_DOWN = IntProp.builder().defaultValue(3).greaterThan(1).
 				desc("Number of seconds to count down from").build();
 	}
 

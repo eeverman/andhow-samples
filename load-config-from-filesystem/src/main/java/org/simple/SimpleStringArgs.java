@@ -6,13 +6,13 @@ import org.yarnandtail.andhow.property.*;
 @GroupInfo(name="Launch Config", desc="More details...")
 public class SimpleStringArgs {
 	
-	final static IntProp COUNT_DOWN_START = IntProp.builder().mustBeNonNull()
+	final static IntProp COUNT_DOWN_START = IntProp.builder().notNull()
 			.desc("Start the countdown from this number")
-			.mustBeGreaterThanOrEqualTo(1).build();
+			.greaterThanOrEqualTo(1).build();
 	
-	private final static StrProp LAUNCH_CMD = StrProp.builder().mustBeNonNull()
+	private final static StrProp LAUNCH_CMD = StrProp.builder().notNull()
 			.desc("What to say when its time to launch")
-			.mustMatchRegex(".*Go.*").build();
+			.matches(".*Go.*").build();
 	
 	private final static BolProp NOTIFY_NEWS = BolProp.builder().defaultValue(true)
 			.desc("If true, post launch events to the AP news feed").build();
@@ -31,8 +31,7 @@ public class SimpleStringArgs {
 		
 		AndHow.findConfig()
 				.setCmdLineArgs(args)
-				.addFixedValue(NOTIFY_NEWS, false)	//turn off for cmd line use
-				.build();
+				.addFixedValue(NOTIFY_NEWS, false);
 		
 		SimpleStringArgs gs = new SimpleStringArgs();
 		System.out.println(gs.launch());
