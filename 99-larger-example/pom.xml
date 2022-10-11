@@ -7,12 +7,12 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>03-sales-handler</artifactId>
+	<artifactId>99-larger-example</artifactId>
 
 
 	<!-- This really isn't meant to be packaged up at all - its sample code -->
 	<packaging>jar</packaging>
-	<name>03-sales-handler</name>
+	<name>99-larger-example</name>
 	<description>
 		A usage example on the main page of the AndHow Project:
 		https://github.com/eeverman/andhow
