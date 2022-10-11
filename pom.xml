@@ -3,7 +3,7 @@
 
 	<groupId>org.yarnandtail</groupId>
 	<artifactId>andhow-samples</artifactId>
-	<version>1.5.1-SNAPSHOT</version>
+	<version>1.5.0</version>
 
 	<!-- This really isn't meant to be packaged up at all - its sample code -->
 	<packaging>pom</packaging>

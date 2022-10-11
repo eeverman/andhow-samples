@@ -4,7 +4,7 @@
 	<parent>
 		<artifactId>cookbook</artifactId>
 		<groupId>org.yarnandtail</groupId>
-		<version>1.5.1-SNAPSHOT</version>
+		<version>1.5.0</version>
 	</parent>
 
 	<artifactId>23-use-prop-file-on-filesystem</artifactId>
