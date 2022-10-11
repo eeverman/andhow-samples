@@ -3,7 +3,7 @@
 
 	<groupId>org.yarnandtail</groupId>
 	<artifactId>andhow-samples</artifactId>
-	<version>1.5.0</version>
+	<version>1.5.1-SNAPSHOT</version>
 
 	<!-- This really isn't meant to be packaged up at all - its sample code -->
 	<packaging>pom</packaging>
@@ -50,7 +50,7 @@
 		<developerConnection>scm:git:git@github.com:eeverman/andhow-samples.git
 		</developerConnection>
 		<url>https://github.com/eeverman/andhow-samples/tree/master</url>
-		<tag>andhow-samples-1.5.0</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<properties>
