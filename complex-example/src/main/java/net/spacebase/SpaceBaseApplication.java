@@ -38,7 +38,7 @@ public class SpaceBaseApplication {
 		//
 		//Also, if there is an AndHowTestInit class is on the test classpath,
 		//it will be used during testing.
-		AndHow.findConfig().setCmdLineArgs(args).build();
+		AndHow.findConfig().setCmdLineArgs(args);
 
 		System.out.println("Spacebase App is started!");
 		singleton = new SpaceBaseApplication();
@@ -74,10 +74,10 @@ public class SpaceBaseApplication {
 	
 	@GroupInfo(name="Application Information", desc="Basic app info for display in the UI")
 	public interface AppInfo {
-		StrProp APP_NAME = StrProp.builder().mustBeNonNull().defaultValue("Space Base").aliasIn("APP_NAME").build();
-		StrProp APP_PUBLIC_URL = StrProp.builder().mustBeNonNull().mustStartWith("http://").defaultValue("http://spacebase.net").build();
+		StrProp APP_NAME = StrProp.builder().notNull().defaultValue("Space Base").aliasIn("APP_NAME").build();
+		StrProp APP_PUBLIC_URL = StrProp.builder().notNull().startsWith("http://").defaultValue("http://spacebase.net").build();
 		LocalDateTimeProp INCEPTION_DATE = 
-				LocalDateTimeProp.builder().mustBeNonNull().defaultValue(LocalDateTime.parse("2017-10-01T00:00")).build();
+				LocalDateTimeProp.builder().notNull().defaultValue(LocalDateTime.parse("2017-10-01T00:00")).build();
 	}
 	
 }

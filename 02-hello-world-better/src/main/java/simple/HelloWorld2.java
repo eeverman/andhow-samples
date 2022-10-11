@@ -35,10 +35,10 @@ public class HelloWorld2 {
 
 	// 1 Declare
 	private static interface Config {
-		StrProp NAME = StrProp.builder().mustStartWith("D")
+		StrProp NAME = StrProp.builder().startsWith("D")
 				.defaultValue("Dave").build();
 
-		IntProp REPEAT_COUNT = IntProp.builder().mustBeLessThan(5)
+		IntProp REPEAT_COUNT = IntProp.builder().lessThan(5)
 				.defaultValue(2).build();
 	}
 	

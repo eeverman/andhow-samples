@@ -22,11 +22,8 @@ public class PrivatePlanetTest {
 	@Test
 	public void testUsingTestPropertiesFile() {
 
-		//Not calling AndHow.findConfig() here because we don't care what config
-		//was going to be used - creating and using a custom one.
-		
-		//Initiate AndHow using a complete custom AndHowConfiguration
-		StdConfig.instance().setClasspathPropFilePath("/test_andhow.properties").build();
+
+		AndHow.findConfig().setClasspathPropFilePath("/test_andhow.properties");
 		
 		PrivatePlanet pp = new PrivatePlanet();
 		assertEquals("TOP_SECRET_TEST", pp.getSecret());

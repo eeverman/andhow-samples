@@ -49,12 +49,12 @@ import org.yarnandtail.andhow.property.*;
 public class GettingStarted {
 	
 	//1
-	public final static IntProp COUNT_DOWN_START = IntProp.builder().mustBeNonNull()
-			.mustBeGreaterThanOrEqualTo(1).defaultValue(3).build();
+	public final static IntProp COUNT_DOWN_START = IntProp.builder().notNull()
+			.greaterThanOrEqualTo(1).defaultValue(3).build();
 	
-	private final static StrProp LAUNCH_CMD = StrProp.builder().mustBeNonNull()
+	private final static StrProp LAUNCH_CMD = StrProp.builder().notNull()
 			.desc("What to say when its time to launch")
-			.mustMatchRegex(".*Go.*").defaultValue("Go-Go-Go!").build();
+			.matches(".*Go.*").defaultValue("Go-Go-Go!").build();
 	
 	public String launch() {
 		String launch = "";

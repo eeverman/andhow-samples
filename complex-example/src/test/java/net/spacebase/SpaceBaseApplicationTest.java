@@ -65,11 +65,8 @@ public class SpaceBaseApplicationTest {
 	@Test
 	public void exampleOfUsingCustomConfigurationAndSpecifyingATestPropertiesFile() {
 
-		//Not calling AndHow.findConfig() here because we don't care what config
-		//was going to be used - creating and using a custom one.
-		
-		//Initiate AndHow using a complete custom AndHowConfiguration
-		StdConfig.instance().setClasspathPropFilePath("/test_andhow.properties").build();
+		AndHow.findConfig().setClasspathPropFilePath("/test_andhow.properties");
+		AndHow.instance();
 		
 		//This now bypasses the main method configuration.
 		SpaceBaseApplication sba = new SpaceBaseApplication();
@@ -79,8 +76,8 @@ public class SpaceBaseApplicationTest {
 
 		PublicPlanet ps = new PublicPlanet();
 		
-		//These values also specified in test_andhow.properties
-		assertEquals("http://server.from.test.properties/ps/", ps.getBroadcastUrl());
+		//These values are overridden in the SpaceBaseTestInit
+		assertEquals("http://test.logserver.com/ps/", ps.getBroadcastUrl());
 		assertEquals(false, ps.isBroadcastEvents());
 		assertEquals(false, ps.isCacheEnabled());
 		

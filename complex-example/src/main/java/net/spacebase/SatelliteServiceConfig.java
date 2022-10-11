@@ -40,9 +40,9 @@ public interface SatelliteServiceConfig {
 	of AndHow, but still pass values thru to legacy systems that only use System
 	properties for configuration.
 	 */
-	StrProp SERVICE_URL = StrProp.builder().mustEndWith("/").mustBeNonNull().aliasInAndOut("sat.svs").build();
-	IntProp TIMEOUT = IntProp.builder().defaultValue(20).mustBeNonNull().aliasInAndOut("sat.to").build();
-	StrProp QUERY_ENDPOINT = StrProp.builder().mustBeNonNull().aliasInAndOut("sat.query").build();
-	StrProp ITEM_ENDPOINT = StrProp.builder().mustBeNonNull().aliasInAndOut("sat.item").build();
+	StrProp SERVICE_URL = StrProp.builder().endsWith("/").notNull().aliasInAndOut("sat.svs").build();
+	IntProp TIMEOUT = IntProp.builder().defaultValue(20).notNull().aliasInAndOut("sat.to").build();
+	StrProp QUERY_ENDPOINT = StrProp.builder().notNull().aliasInAndOut("sat.query").build();
+	StrProp ITEM_ENDPOINT = StrProp.builder().notNull().aliasInAndOut("sat.item").build();
 
 }

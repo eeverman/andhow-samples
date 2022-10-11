@@ -12,17 +12,17 @@ public class PublicPlanet {
 	static interface CONFIG {
 		@GroupInfo(name = "Remote connection config", desc = "description. . .")
 		static interface REMOTE {
-			StrProp URL = StrProp.builder().mustEndWith("/").build();
+			StrProp URL = StrProp.builder().endsWith("/").build();
 			IntProp TIMEOUT = IntProp.builder().defaultValue(50).build();
 		}
 		@GroupInfo(name = "Cache config", desc = "description. . .")
 		static interface CACHE {
 			BolProp ENABLED = BolProp.builder().defaultValue(true).build();
-			StrProp FILE = StrProp.builder().mustBeNonNull().build();
+			StrProp FILE = StrProp.builder().notNull().build();
 		}
 		@GroupInfo(name = "Event broadcast config", desc = "description. . .")
 		static interface BROADCAST {
-			StrProp URL = StrProp.builder().mustEndWith("/").build();
+			StrProp URL = StrProp.builder().endsWith("/").build();
 			BolProp ENABLED = BolProp.builder().defaultValue(true).build();
 		}
 	}
