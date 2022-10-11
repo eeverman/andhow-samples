@@ -10,14 +10,14 @@ import java.math.MathContext;
 public class DistanceCalculator {
 
 	private static interface Config {
-		BigDecProp LATITUDE = BigDecProp.builder().mustBeNonNull().
-				mustBeGreaterThanOrEqualTo(BigDecimal.valueOf(-90L)).
-				mustBeLessThanOrEqualTo(BigDecimal.valueOf(90L)).
+		BigDecProp LATITUDE = BigDecProp.builder().notNull().
+				greaterThanOrEqualTo(BigDecimal.valueOf(-90L)).
+				lessThanOrEqualTo(BigDecimal.valueOf(90L)).
 				desc("Latitude in decimal degrees of missile base.").build();
 
-		BigDecProp LONGITUDE = BigDecProp.builder().mustBeNonNull().
-				mustBeGreaterThanOrEqualTo(BigDecimal.valueOf(-180L)).
-				mustBeLessThanOrEqualTo(BigDecimal.valueOf(180L)).
+		BigDecProp LONGITUDE = BigDecProp.builder().notNull().
+				greaterThanOrEqualTo(BigDecimal.valueOf(-180L)).
+				lessThanOrEqualTo(BigDecimal.valueOf(180L)).
 				desc("Latitude in decimal degrees of missile base.").build();
 	}
 
