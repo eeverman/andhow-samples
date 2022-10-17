@@ -3,7 +3,7 @@
 
 	<groupId>org.yarnandtail</groupId>
 	<artifactId>andhow-samples</artifactId>
-	<version>1.5.0</version>
+	<version>1.5.1-SNAPSHOT</version>
 
 	<!-- This really isn't meant to be packaged up at all - its sample code -->
 	<packaging>pom</packaging>
@@ -57,7 +57,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- dependency versions -->
-		<parent.andhow.version>1.5.0</parent.andhow.version>
+		<parent.andhow.version>1.5.1-SNAPSHOT</parent.andhow.version>
 		<parent.junit.version>5.7.2</parent.junit.version>
 		<parent.hamcrest.version>2.2</parent.hamcrest.version>
 
